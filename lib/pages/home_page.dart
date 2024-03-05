@@ -31,6 +31,74 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Icon(
+              Icons.person_outlined,
+              size: 120.0,
+              color: Colors.green,
+            ),
+            const TextField(
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: "Peso (Kg)",
+                labelStyle: TextStyle(
+                  color: Colors.green,
+                ),
+              ),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 25.0,
+              ),
+            ),
+            const TextField(
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: "Altura (Cm)",
+                labelStyle: TextStyle(
+                  color: Colors.green,
+                ),
+              ),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 25.0,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                ),
+                child: const Text(
+                  'Calcular',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ),
+            const Text(
+              'Info',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 25,
+                fontWeight: FontWeight.w700,
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
