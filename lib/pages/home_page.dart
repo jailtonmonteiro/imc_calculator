@@ -26,16 +26,28 @@ class _HomePageState extends State<HomePage> {
   }
 
   void calculateIMC() {
-    setState(() {
-      double weight = double.parse(weighController.text);
-      double height = double.parse(heightController.text) / 100;
+    setState(
+      () {
+        double weight = double.parse(weighController.text);
+        double height = double.parse(heightController.text) / 100;
 
-      double imc = weight / (height * height);
+        double imc = weight / (height * height);
 
-      if (imc < 18.6) {
-        infoText = 'Abaixo do Peso (${imc.toStringAsPrecision(3)})';
-      }
-    });
+        if (imc <= 18.5) {
+          infoText = 'Abaixo do Peso (${imc.toStringAsPrecision(3)})';
+        } else if (imc > 18.5 && imc < 25.0) {
+          infoText = 'Peso Normal (${imc.toStringAsPrecision(3)})';
+        } else if (imc >= 25.0 && imc < 30.0) {
+          infoText = 'Sobre Peso (${imc.toStringAsPrecision(3)})';
+        } else if (imc >= 30.0 && imc < 35.0) {
+          infoText = 'Obesidade de Grau I (${imc.toStringAsPrecision(3)})';
+        } else if (imc >= 35.0 && imc < 40.0) {
+          infoText = 'Obesidade de Grau II (${imc.toStringAsPrecision(3)})';
+        } else if (imc > 40.0) {
+          infoText = 'Obesidade de Grau III (${imc.toStringAsPrecision(3)})';
+        }
+      },
+    );
   }
 
   @override
